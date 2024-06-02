@@ -28,6 +28,9 @@ jobs:
     - name: Create-DB
       run: docker-compose up -d
 
+    - name: Wait for DB
+      run: sleep 15 # Ajuste o tempo conforme necessário para garantir que o banco de dados esteja pronto
+
     - name: Test
       run: go test -v main_test.go 
       
